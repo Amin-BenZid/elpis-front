@@ -22,7 +22,7 @@ function Home() {
     get yours before they're gone
     forever!`,
       size: [{ S: 2 }, { M: 6 }, { L: 6 }, { XL: 4 }, { Sshort: 2 }, { Mshort: 10 }],
-      price: 65,
+      price: 59,
       quantitie: 30,
       colors: ["black", "beige"],
     },
