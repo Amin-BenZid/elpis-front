@@ -28,13 +28,13 @@ const AdminPage = () => {
   console.log(newProduct.productimg);
 
   useEffect(() => {
-    axios.get("http://localhost:4000/api/guest/products").then((res) => {
+    axios.get("guest/products").then((res) => {
       setData(res.data.result);
     });
   }, []);
   const Post = () => {
     axios
-      .post("http://localhost:4000/api/admin/product", newProduct, {
+      .post("admin/product", newProduct, {
         headers: {
           authorization: localStorage.getItem("authorization"),
         },

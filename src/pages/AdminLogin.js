@@ -16,7 +16,7 @@ const Admin = () => {
   };
   const login = () => {
     axios
-      .post("http://localhost:4000/api/admin/login", loginData)
+      .post("admin/login", loginData)
       .then((response) => {
         localStorage.setItem("authorization", response.data.token);
         navigate("/admin");

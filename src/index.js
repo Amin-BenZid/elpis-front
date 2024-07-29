@@ -9,6 +9,8 @@ import Cart from "./pages/Cart";
 import AdminLogin from "./pages/AdminLogin";
 import logo from "./img/white - Copy.png";
 import AdminPage from "./pages/AdminPage";
+import axios from "axios";
+axios.defaults.baseURL = "http://localhost:4000/api/";
 
 const router = createBrowserRouter([
   {

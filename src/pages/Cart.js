@@ -40,7 +40,7 @@ const Cart = () => {
   const notify = () => toast("Order Placed ! Thank you");
   const post = () => {
     axios
-      .post("http://localhost:4000/api/guest/order", newOrder)
+      .post("guest/order", newOrder)
       .then((response) => {
         localStorage.setItem("toBuy", JSON.stringify(newOrder));
         notify();
