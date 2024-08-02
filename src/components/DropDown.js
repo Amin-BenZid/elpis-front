@@ -80,7 +80,7 @@ const DropDown = ({ size, setSize }) => {
 
         <TEDropdownItem preventCloseOnClick>
           <p className="pointer-events-none cursor-auto text-neutral-400 block w-full min-w-[160px] whitespace-nowrap bg-black px-4 py-2 text-sm text-left font-normal hover:bg-neutral-100 active:text-neutral-800 active:bg-neutral-100 focus:bg-neutral-100 focus:text-neutral-800 focus:outline-none active:no-underline dark:text-neutral-200 dark:hover:bg-neutral-600 dark:focus:bg-neutral-600 dark:active:bg-neutral-600">
-            Short Sizes
+            Short Sizes (for short men : 1.5m to 1.7m)
           </p>
         </TEDropdownItem>
         <TEDropdownItem className="text-black">

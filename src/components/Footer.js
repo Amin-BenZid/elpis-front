@@ -9,9 +9,9 @@ const Footer = () => {
       <div className="h-[1px] bg-black w-full "> </div>
       <div className=" flex  flex-col gap-2 p-8 lg:flex-row  lg:justify-center  ">
         <div className="flex flex-col gap-4 lg:flex-row lg:gap-96">
-          <div className="flex flex-col gap-2 lg:w-80">
-            <p>Get your exclusive emails</p>
-            <input type="text" className="w-full h-8 border border-black" />
+          <div className="flex flex-col gap-2 lg:w-80 pt-8">
+            {/* <p>Get your exclusive emails</p>
+            <input type="text" className="w-full h-8 border border-black" /> */}
             <p>official.elpis24@gmail.com</p>
           </div>
           <div className="flex flex-col items-center justify-center p-2">

@@ -34,6 +34,7 @@ const Cart = () => {
     color: toBuy.color,
     size: toBuy.size,
     qty: toBuy.qty,
+    price: toBuy.price,
     placed: true,
   };
 

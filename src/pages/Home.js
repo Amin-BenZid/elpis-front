@@ -45,7 +45,6 @@ function Home() {
   const setToCord = () => {
     localStorage.setItem("toBuy", JSON.stringify(toBuy));
     window.location.href = "/cart";
-    // window.location.reload();
   };
   return (
     <div className="">
@@ -85,6 +84,24 @@ function Home() {
   );
 }
 const Card = ({ setToCord, size, setSize, data, color, setColor }) => {
+  const slides = [
+    {
+      url: "https://i.pinimg.com/736x/f7/29/36/f72936823ce5ead191e0a25218667073.jpg",
+    },
+    {
+      url: "https://i.pinimg.com/736x/0a/4d/3a/0a4d3af3060a44cd483bb93d1bcc5f65.jpg",
+    },
+    {
+      url: "https://i.pinimg.com/736x/6b/2f/89/6b2f890c59f70e63b20dd78632974202.jpg",
+    },
+    {
+      url: "https://i.pinimg.com/736x/c5/cc/2c/c5cc2c848c07e170d139233733d2a097.jpg",
+    },
+    { url: "https://i.pinimg.com/736x/67/f4/2b/67f42b3aec2c741fb954ef43fdcf73dd.jpg" },
+    { url: "https://i.pinimg.com/736x/6f/ad/66/6fad66dd747a94ef271c6158cfcb54dd.jpg" },
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
   return (
     <>
       {data.map((e, key) => {
@@ -94,9 +111,13 @@ const Card = ({ setToCord, size, setSize, data, color, setColor }) => {
             className="flex flex-col px-1 py-8 lg:flex-row lg:gap-40 lg:justify-center lg:items-center"
           >
             <div className="flex flex-col items-center justify-center h-[600px] w-full lg:w-[400px] ">
-              <Slider />
+              <Slider
+                slides={slides}
+                currentIndex={currentIndex}
+                setCurrentIndex={setCurrentIndex}
+              />
             </div>
-            <div className="flex flex-col gap-2 lg:w-80">
+            <div className="flex flex-col gap-2 lg:w-80 px-4">
               <h1 className="font-extrabold text-[2rem] uppercase pt-4 text-left">
                 {e.productName}
               </h1>
@@ -109,12 +130,14 @@ const Card = ({ setToCord, size, setSize, data, color, setColor }) => {
                   <div
                     onClick={() => {
                       setColor("black");
+                      setCurrentIndex(1);
                     }}
                     className="h-7 w-7 bg-black rounded-xl cursor-pointer hover:blur-sm transition-all duration-150"
                   ></div>
                   <div
                     onClick={() => {
                       setColor("beige");
+                      setCurrentIndex(3);
                     }}
                     className="h-7 w-7 bg-amber-200 rounded-xl cursor-pointer hover:blur-sm transition-all duration-150"
                   ></div>
@@ -137,26 +160,7 @@ const Card = ({ setToCord, size, setSize, data, color, setColor }) => {
 };
 
 export default Home;
-const Slider = () => {
-  const slides = [
-    {
-      url: "https://i.pinimg.com/736x/f7/29/36/f72936823ce5ead191e0a25218667073.jpg",
-    },
-    {
-      url: "https://i.pinimg.com/736x/0a/4d/3a/0a4d3af3060a44cd483bb93d1bcc5f65.jpg",
-    },
-    {
-      url: "https://i.pinimg.com/736x/6b/2f/89/6b2f890c59f70e63b20dd78632974202.jpg",
-    },
-    {
-      url: "https://i.pinimg.com/736x/c5/cc/2c/c5cc2c848c07e170d139233733d2a097.jpg",
-    },
-    { url: "https://i.pinimg.com/736x/67/f4/2b/67f42b3aec2c741fb954ef43fdcf73dd.jpg" },
-    { url: "https://i.pinimg.com/736x/6f/ad/66/6fad66dd747a94ef271c6158cfcb54dd.jpg" },
-  ];
-
-  const [currentIndex, setCurrentIndex] = useState(0);
-
+const Slider = ({ slides, currentIndex, setCurrentIndex }) => {
   const prevSlide = () => {
     const isFirstSlide = currentIndex === 0;
     const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
