@@ -26,7 +26,7 @@ const Footer = () => {
               >
                 <img alt="fb" className="w-10 lg:w-7" src={fb} />
               </a>
-              <a href="https://www.tiktok.com/@elpis.24" target="_blank">
+              <a href="https://www.tiktok.com/@elpis.tn" target="_blank">
                 <img alt="tiktok" className="w-10 lg:w-7" src={tk} />
               </a>
             </div>
