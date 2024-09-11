@@ -1,37 +1,34 @@
 import NavBar from "../components/NavBar";
 import VideoPLayer from "../components/VideoPLayer";
-import img from "../img/Product.png";
+import img from "../img/Untitled design (1).jpg";
 import DropDown from "../components/DropDown";
 import Footer from "../components/Footer";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
-import banner from "../img/Untitled design (8).png";
+import banner from "../img/Untitled design (1).jpg";
 import { getByPlaceholderText } from "@testing-library/react";
 
 function Home() {
   const data = [
     {
-      productName: "Elpis T-shirt",
+      productName: "Greatness T-shirt",
       productimg: img,
-      description: `Own an exclusive Limited Edition
-    T-Shirt .
-    Crafted from premium materials
-    with a unique design. Act fast to
-    get yours before they're gone
-    forever!`,
+      description: `This Tee is inspired by the fear 
+of being average ,Driven by desire
+to archive Greatness `,
       size: [{ S: 2 }, { M: 6 }, { L: 6 }, { XL: 4 }, { Sshort: 2 }, { Mshort: 10 }],
-      price: 59,
-      quantitie: 30,
-      colors: ["black", "beige"],
+      price: 55,
+      quantitie: 25,
+      colors: ["white"],
     },
   ];
 
   const [size, setSize] = useState("Size");
-  const [color, setColor] = useState("black");
+  const [color, setColor] = useState("white");
   const [imge, SetImg] = useState(
-    "https://i.pinimg.com/736x/f7/29/36/f72936823ce5ead191e0a25218667073.jpg"
+    "https://i.pinimg.com/736x/a0/74/76/a07476d3f525e5e6080e1734070131a0.jpg"
   );
   const toBuy = {
     productName: "Elpis T-shirt",
@@ -49,7 +46,7 @@ function Home() {
   return (
     <div className="">
       <NavBar />
-      <div className="bg-[#AD8B71] pt-20 text-white flex items-center justify-center">
+      <div className="bg-black pt-20 text-white flex items-center justify-center">
         <p className="uppercase text-xs tracking-widest text-center px-4 py-3">
           NEW DROP
         </p>
@@ -58,7 +55,7 @@ function Home() {
         <div className="bg-red-600 ">
           <img src={banner} className="w-full h-full" />
         </div>
-        <div className="bg-[#AD8B71] text-white flex items-center justify-center">
+        <div className="bg-black text-white flex items-center justify-center">
           <p className="uppercase text-xs tracking-widest text-center px-4 py-3">
             NEW DROP
           </p>
@@ -86,24 +83,28 @@ function Home() {
 const Card = ({ setToCord, size, setSize, data, color, setColor }) => {
   const slides = [
     {
-      url: "https://i.pinimg.com/736x/f7/29/36/f72936823ce5ead191e0a25218667073.jpg",
+      url: "https://i.pinimg.com/736x/a0/74/76/a07476d3f525e5e6080e1734070131a0.jpg",
     },
-    {
-      url: "https://i.pinimg.com/736x/0a/4d/3a/0a4d3af3060a44cd483bb93d1bcc5f65.jpg",
-    },
-    {
-      url: "https://i.pinimg.com/736x/6b/2f/89/6b2f890c59f70e63b20dd78632974202.jpg",
-    },
-    {
-      url: "https://i.pinimg.com/736x/c5/cc/2c/c5cc2c848c07e170d139233733d2a097.jpg",
-    },
-    { url: "https://i.pinimg.com/736x/67/f4/2b/67f42b3aec2c741fb954ef43fdcf73dd.jpg" },
-    { url: "https://i.pinimg.com/736x/6f/ad/66/6fad66dd747a94ef271c6158cfcb54dd.jpg" },
+    // to change later
+    //   {
+    //     url: "https://i.pinimg.com/736x/0a/4d/3a/0a4d3af3060a44cd483bb93d1bcc5f65.jpg",
+    //   },
+    //   {
+    //     url: "https://i.pinimg.com/736x/6b/2f/89/6b2f890c59f70e63b20dd78632974202.jpg",
+    //   },
+    //   {
+    //     url: "https://i.pinimg.com/736x/c5/cc/2c/c5cc2c848c07e170d139233733d2a097.jpg",
+    //   },
+    //   { url: "https://i.pinimg.com/736x/67/f4/2b/67f42b3aec2c741fb954ef43fdcf73dd.jpg" },
+    //   { url: "https://i.pinimg.com/736x/6f/ad/66/6fad66dd747a94ef271c6158cfcb54dd.jpg" },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
   return (
     <>
+      <h1 className=" h-24 flex items-center justify-center text-[3rem] font-bold pt-8">
+        Only 25 T-shirts!
+      </h1>
       {data.map((e, key) => {
         return (
           <div
@@ -117,14 +118,14 @@ const Card = ({ setToCord, size, setSize, data, color, setColor }) => {
                 setCurrentIndex={setCurrentIndex}
               />
             </div>
-            <div className="flex flex-col gap-2 lg:w-80 px-4">
+            <div className="flex flex-col gap-2 lg:w-96 px-4">
               <h1 className="font-extrabold text-[2rem] uppercase pt-4 text-left">
                 {e.productName}
               </h1>
               <p>{e.description}</p>
               <h1 className="font-extrabold text-[2rem]">{e.price} DT</h1>
               <DropDown size={size} setSize={setSize} />
-              <div className="flex gap-2 items-center mt-2 ">
+              {/*           <div className="flex gap-2 items-center mt-2 ">
                 <h1>Color : </h1>
                 <div className="flex gap-2">
                   <div
@@ -143,7 +144,7 @@ const Card = ({ setToCord, size, setSize, data, color, setColor }) => {
                   ></div>
                 </div>
                 {color}
-              </div>
+              </div> */}
               <button
                 onClick={setToCord}
                 className="bg-black h-11 hover:bg-slate-900 transition-all duration-200 cursor-pointer text-white font-extrabold flex items-center justify-center text-xl pt-1 mt-4"

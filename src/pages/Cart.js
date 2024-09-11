@@ -309,8 +309,8 @@ const EditPopUp = ({
             {/*body*/}
             <div className="relative p-6 flex-auto flex flex-col gap-4">
               <DropDown size={size} setSize={setSize} />
-              <h1>Color : </h1>
-              <div className="flex gap-2">
+              {/* <h1>Color : </h1> */}
+              {/* <div className="flex gap-2">
                 <div
                   onClick={() => setColor("black")}
                   className="h-7 w-7 bg-black rounded-xl cursor-pointer hover:blur-sm transition-all duration-150"
@@ -320,7 +320,7 @@ const EditPopUp = ({
                   className="h-7 w-7 bg-amber-200 rounded-xl cursor-pointer hover:blur-sm transition-all duration-150"
                 ></div>
                 {color}
-              </div>
+              </div> */}
               <div className="flex gap-4">
                 <h1>Quantitie :</h1>
                 <input
