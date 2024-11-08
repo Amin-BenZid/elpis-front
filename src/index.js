@@ -10,7 +10,7 @@ import AdminLogin from "./pages/AdminLogin";
 import logo from "./img/white - Copy.png";
 import AdminPage from "./pages/AdminPage";
 import axios from "axios";
-axios.defaults.baseURL = "https://api.elpis.tn/api/";
+axios.defaults.baseURL = process.env.REACT_APP_API_HOST;
 
 const router = createBrowserRouter([
   {
